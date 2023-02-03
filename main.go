@@ -30,7 +30,7 @@ func main() {
 	flag.Parse()
 
 	if *showVersion {
-		fmt.Printf("json2csv v%s (built w/%s)\n", VERSION, runtime.Version())
+		fmt.Printf("jb2csv v%s (built w/%s)\n", VERSION, runtime.Version())
 		return
 	}
 
@@ -61,7 +61,7 @@ func main() {
 	delim, _ := utf8.DecodeRuneInString(*outputDelim)
 	writer.Comma = delim
 
-	json2csv(reader, writer, keys, *printHeader)
+	jb2csv(reader, writer, keys, *printHeader)
 }
 
 func get_value(data map[string]interface{}, keyparts []string) string {
@@ -87,7 +87,7 @@ func get_value(data map[string]interface{}, keyparts []string) string {
 	return ""
 }
 
-func json2csv(r LineReader, w *csv.Writer, keys []string, printHeader bool) {
+func jb2csv(r LineReader, w *csv.Writer, keys []string, printHeader bool) {
 	var line []byte
 	var err error
 	line_count := 0

@@ -15,10 +15,10 @@ goversion=$(go version | awk '{print $3}')
 
 for os in linux darwin; do
     echo "... building v$version for $os/$arch"
-    BUILD=$(mktemp -d -t json2csv)
-    TARGET="json2csv-$version.$os-$arch.$goversion"
+    BUILD=$(mktemp -d -t jb2csv)
+    TARGET="jb2csv-$version.$os-$arch.$goversion"
     mkdir -p $BUILD/$TARGET
-    GOOS=$os GOARCH=$arch CGO_ENABLED=0 go build -o $BUILD/$TARGET/json2csv
+    GOOS=$os GOARCH=$arch CGO_ENABLED=0 go build -o $BUILD/$TARGET/jb2csv
 
     pushd $BUILD >/dev/null
     tar czvf $TARGET.tar.gz $TARGET

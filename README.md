@@ -1,7 +1,8 @@
-json2csv
+jb2csv
 ========
 
 Converts a stream of newline separated json data to csv format.
+This is a fork of json2csv, with a change of name, so as to avoid a clash with the node.js (NPM) function with the same name.
 
 [![Build Status](https://travis-ci.org/jehiah/json2csv.png?branch=master)](https://travis-ci.org/jehiah/json2csv) [![GitHub release](https://img.shields.io/github/release/jehiah/json2csv.svg)](https://github.com/jehiah/json2csv/releases/latest)
 
@@ -14,14 +15,14 @@ pre-built binaries are available under [releases](https://github.com/jehiah/json
 If you have a working golang install, you can use `go get`.
 
 ```bash
-go get github.com/jehiah/json2csv
+go get github.com/baejoseph/jb2csv
 ```
 
 Usage
 =====
 
 ```
-usage: json2csv
+usage: jb2csv
     -k fields,and,nested.fields,to,output
     -i /path/to/input.json (optional; default is stdin)
     -o /path/to/output.csv (optional; default is stdout)
@@ -49,11 +50,11 @@ to:
 you would either
 
 ```bash
-json2csv -k user.name,remote_ip -i input.json -o output.csv
+jb2csv -k user.name,remote_ip -i input.json -o output.csv
 ```
 
 or
 
 ```bash
-cat input.json | json2csv -k user.name,remote_ip > output.csv
+cat input.json | jb2csv -k user.name,remote_ip > output.csv
 ```
